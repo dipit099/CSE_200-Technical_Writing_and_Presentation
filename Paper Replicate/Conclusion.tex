@@ -1,0 +1,7 @@
+
+\section{Conclusion}
+We developed a fully dynamic $(2 + \varepsilon)$ approximation algorithm for $k$-center clustering with running time independent of the number of centers $k$. Our algorithm maintains multiple hierarchies (so called navigating nets), so that each hierarchy stores sets of points which evolve over time through deletions and insertions. 
+
+Roughly speaking, each of these hierarchies maintains the property that points residing on the same level are at least separated by a specific distance. This allows us to obtain $k$-center solutions with an approximation of $(2 + \varepsilon)$. Maintaining the navigating nets can be done in time independent of $k$. 
+
+Lastly, we conducted an extensive evaluation of this algorithm which indicates that our algorithm outperforms the state-of-the-art algorithms for values of $k$ and $\varepsilon$ suggested by theory. In this case, our algorithm obtains significant speedups and improvements in solution quality. An interesting direction for future research includes parallelization of the two algorithms as well as implementing the streaming algorithms by Schmidt and Sohler~\cite{schmidt2019dynamic, mccutchen2008streaming} and Charikar et al.~\cite{charikar2004incremental}.

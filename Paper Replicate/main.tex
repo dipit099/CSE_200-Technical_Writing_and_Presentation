@@ -1,0 +1,58 @@
+\documentclass[preprint,11pt]{elsarticle}
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage{graphicx} 
+\usepackage{hyperref} 
+\usepackage{mathtools}
+\usepackage{amsmath}    
+\usepackage{amssymb} 
+
+\title{Fully Dynamic \textit{k}-Center Clustering in Low Dimensional Metrics}
+
+\author[toronto]{Gramoz Goranci\corref{cor1}}
+\author[vienna]{Monika Henzinger}
+\author[vienna]{Dariusz Leniowski}
+\author[heidelberg]{Christian Schulz}
+\author[vienna]{Alexander Svozil}
+
+% \cortext[cor1]{Corresponding author.}
+
+\address[toronto]{Department of Computer Science, University of Toronto, Canada.}
+\address[vienna]{Theory and Application of Algorithms, University of Vienna, Austria.}
+\address[heidelberg]{Faculty of Mathematics and Computer Science, Heidelberg University, Germany.}
+
+\fntext[funding]{The research leading to these results has received funding from the European Research Council under the European Union's Seventh Framework Programme (FP/2007–2013) / ERC Grant Agreement no. 340506, and from the Vienna Science and Technology Fund (WWTF) through project ICT15–003.}
+
+\begin{document}
+
+
+\begin{abstract}
+\input{Abstract}
+\end{abstract}
+
+\maketitle
+\input{Introduction}
+
+\input{Preliminaries}
+
+\input{Fully dynamic k center}
+
+
+\input{emperical_analysis}
+\input{Algorithm of Chan}
+\input{Setup}
+   
+
+\input{Instances and Update Sequences}
+    
+\input{Results and Interpretation}
+  
+
+\input{Conclusion}
+
+
+\bibliography{ref.bib}
+\bibliographystyle{ieeetr}
+
+
+\end{document}

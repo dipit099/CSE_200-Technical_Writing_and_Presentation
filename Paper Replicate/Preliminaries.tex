@@ -1,0 +1,8 @@
+\section{Preliminaries}
+In the \textit{k}-center clustering problem, we are given a set $\mathit{M}$ of points equipped with some metric $d$ and an integer parameter $k > 0$. The goal is to find a set $C = \{ c_1, \dots, c_k \}$ of $k$ points (centers) so as to minimize the quantity $\phi(C) = \max_{x \in M} d(x, C)$, where $d(x, C) = \min_{c \in C} d(x, c)$. Let OPT denote the cost of the optimal solution.
+
+In the \textit{dynamic} version of this problem, the set $M$ evolves over time and queries can be asked. Concretely, at each timestep $t$, either a new point is added to $M$, removed from $M$, or one of the following queries is made for any given point $x \in M$: 
+(i) decide whether $x$ is a center in the current solution, and 
+(ii) find the center $c$ to which $x$ is assigned. The goal is to maintain the set of centers $C$ after each client update so as to maintain a small factor approximation to the optimal solution.
+
+Let $d_{\text{min}}$ and $d_{\text{max}}$ be lower and upper bounds on the minimum and maximum distance between any two points that are ever inserted. For each $x \in M$ and radius $r$, let $B(x, r)$ be the set of all points in $M$ that are within distance $r$ from $x$, i.e., $B(x, r) := \{ y \in M \mid d(x, y) \leq r \}$.

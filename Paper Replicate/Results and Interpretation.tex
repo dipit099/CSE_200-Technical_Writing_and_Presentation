@@ -1,0 +1,75 @@
+  
+    \subsection{Results and Interpretation}    
+    We now evaluate the performance of $A_{\text{Cov}}$ and compare it to $A_{\text{CGS}}$. In Table \ref{tab:table1}, we present the geometric mean speedup of $A_{\text{Cov}}$ over $A_{\text{CGS}}$. Here, both algorithms use the same parameter $\varepsilon$ and have the same number of centers $k$.First of all, note that the empirical results reinforce the theoretical results: The larger $k$ and $\varepsilon$ are in our experiments, the larger the speedups of $A_{\text{Cov}}$ become when compared to the algorithm $A_{\text{CGS}}$. The running time of our algorithm $A_{\text{Cov}}$ does not depend on $k$, whereas in contrast, each update of $A_{\text{CGS}}$ depends quadratically on $k$ on average.Moreover, speedups improve for larger values of $\varepsilon$ since the running time of $A_{\text{Cov}}$ has a multiplicative factor of $O(\varepsilon^{-1} \ln \varepsilon^{-1})$ and $A_{\text{CGS}}$'s running time includes a better factor $O(\varepsilon^{-1})$.   
+    For example, when $k$ is as large as 200, $A_{\text{Cov}}$ is faster than $A_{\text{CGS}}$ for all values of $\varepsilon$. In contrast, when $\varepsilon = 1$, $A_{\text{Cov}}$ has better speedups than $A_{\text{CGS}}$ already for small values of $k$ like $k = 50$. When $k = 20$, $A_{\text{CGS}}$ is faster than $A_{\text{Cov}}$.  
+    
+    We proceed to compare the solution quality when both algorithms use the same parameter $\varepsilon$ and also use the same number of centers $k$. In Table \ref{tab:table1} we present the geometric mean solution improvement of $A_{\text{Cov}}$ over $A_{\text{CGS}}$ for this case.$A_{\text{Cov}}$ gives better solutions for all instances as soon as $\varepsilon \geq 0.5$. Generally speaking, the larger $\varepsilon$ gets, the larger is our improvement in the solution: For $\varepsilon = 0.5$, our algorithm gives 10--12\% better solutions. Setting $\varepsilon = 1$, we already obtain 12--36\% better solutions, and finally, when setting $\varepsilon = 4$, we obtain 7--114\% better solutions. For $\varepsilon = 0.1$, our solutions are about 3--4\% worse than the solutions of $A_{\text{CGS}}$. We conclude that our algorithm has a significant advantage in running time \textit{and} solution quality for slightly larger values of $k$ and $\varepsilon$.
+
+
+
+        \begin{table}[h!]
+        \centering
+        \caption{Top: Geometric mean speedup of our algorithm $A_{\text{Cov}}$ over $A_{\text{CGS}}$. Bottom: Geometric mean improvement in solution quality of $A_{\text{Cov}}$ over $A_{\text{CGS}}$. Both algorithms use the same $\varepsilon$ and $k$. Higher numbers are better.}        
+        \begin{tabular}{c|cccc}
+        % \hline
+        $\varepsilon \rightarrow$   & 0.1 & 0.5 & 1.0 & 4.0 \\
+        $k \downarrow$             & & & & \\
+        \hline
+        20              & 0.02 & 0.14 & 0.32 & 0.72 \\
+        50              & 0.10 & 0.59 & \textbf{1.34} & \textbf{3.05} \\
+        100             & 0.33 & \textbf{2.01} & \textbf{4.45} & \textbf{10.32} \\
+        200             & \textbf{1.15} & \textbf{7.66} & \textbf{17.74} & \textbf{39.60} \\
+        \hline
+        20              & 0.97 & \textbf{1.12} & \textbf{1.27} & \textbf{1.07} \\
+        50              & 0.97 & \textbf{1.10} & \textbf{1.36} & \textbf{1.46} \\
+        100             & 0.96 & \textbf{1.12} & \textbf{1.12} & \textbf{2.14} \\
+        200             & 0.96 & \textbf{1.12} & \textbf{1.19} & \textbf{1.28} \\
+        \hline
+        \end{tabular}  
+        \label{tab:table1}
+        \end{table}
+
+        \begin{table}[h!]
+        \centering
+        \caption{Top: Geometric mean speedup over $A_{\text{CGS}}$ when fixing $\varepsilon = 1$ for our algorithm $A_{\text{Cov}}$. Bottom: Geometric mean improvement in solution quality when fixing $\varepsilon = 1$ for $A_{\text{Cov}}$. Higher numbers are better.}
+        \begin{tabular}{c|cccc}
+        % \hline
+        $\varepsilon \rightarrow$ & 0.1 & 0.5 & 1.0 & 4.0 \\
+        $k \downarrow$ & & & & \\
+        \hline
+        20 & \textbf{2.48} & 0.55 & 0.32 & 0.14 \\
+        50 & \textbf{10.01} & \textbf{2.27} & \textbf{1.34} & \textbf{0.62} \\
+        100 & \textbf{32.17} & \textbf{7.51} & \textbf{4.45} & \textbf{2.08} \\
+        200 & \textbf{130.01} & \textbf{29.60} & \textbf{17.74} & \textbf{8.35} \\
+        \hline
+        20 & 0.91 & \textbf{1.08} & \textbf{1.27} & \textbf{1.18} \\
+        50 & 0.90 & \textbf{1.05} & \textbf{1.36} & \textbf{1.72} \\
+        100 & 0.89 & \textbf{1.06} & \textbf{1.12} & \textbf{2.52} \\
+        200 & 0.88 & \textbf{1.06} & \textbf{1.19} & \textbf{1.54} \\
+        \end{tabular}
+        \label{tab:table2}
+        \end{table}
+
+        \begin{table}[h]
+        \centering
+        \caption{Top: Geometric mean speedup over $A_{\text{CGS}}$ when fixing $\varepsilon = 4$ for our algorithm $A_{\text{Cov}}$. Bottom: Geometric mean improvement in solution quality when fixing $\varepsilon = 4$ for $A_{\text{Cov}}$. Higher numbers are better.}       
+        \begin{tabular}{c|cccc}
+        $\varepsilon \rightarrow$ & 0.1 & 0.5 & 1.0 & 4.0 \\
+        $k \downarrow$  & & & & \\
+        \hline
+        20  & \textbf{12.09}  & 2.70  & 1.58  & 0.72 \\
+        50  & \textbf{48.69} & 11.07  & 6.54  & 3.05 \\
+        100 & \textbf{159.11} & 37.17  & 22.03  & 10.32 \\
+        200 & \textbf{616.51} & 140.38 & 84.13 & 39.60 \\
+        \hline
+        20  & 0.83  & 0.98  & 1.16  & 1.07 \\
+        50  & 0.76  & 0.89  & 1.16  & 1.46 \\
+        100 & 0.76  & 0.90  & 0.95  & 2.14 \\
+        200 & 0.74  & 0.88  & 0.99  & 1.28 \\
+        \end{tabular}
+        \label{tab:table3}
+        \end{table}
+
+        
+
+    We now fix the value of $\varepsilon$ in our algorithm to 1 and 4 and compare it with $A_{\text{CGS}}$ for all values of $\varepsilon$. Table \ref{tab:table2} presents the geometric mean speedup of the results and the geometric mean improvement in solution quality for the case that we fix $\varepsilon = 1$ in our algorithm. Notice that we obtain a speedup of at least one magnitude when $k \geq 50$ comparing to $A_{\text{CGS}}$ with $\varepsilon = 0.1$ while sacrificing only 9--12\% in solution quality over $A_{\text{CGS}}$. Most significantly, $A_{\text{Cov}}$ is faster than $A_{\text{CGS}}$ with $\varepsilon = 0.5$ and $k \geq 50$ while also obtaining better solution quality. Similarly, we set $\varepsilon = 4$ for $A_{\text{Cov}}$ and compare the results to $A_{\text{CGS}}$ for all values of $\varepsilon$ again. The resulting geometric mean speedups and the geometric mean solution improvement is presented in Table \ref{tab:table3}. When comparing to $A_{\text{CGS}}$ with $\varepsilon = 0.1$ we obtain speedups of one order when $k \leq 50$ and two orders when $k \geq 100$ while sacrificing at most 26\% of the solution quality.

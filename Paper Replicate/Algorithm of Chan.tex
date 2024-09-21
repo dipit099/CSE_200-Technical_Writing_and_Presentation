@@ -1,0 +1,5 @@
+
+\subsection{The algorithm of Chan et al. \cite{hubert2018dynamic}}
+To gain some intuition into the state-of-the-art algorithm in practice, we give a brief summary of the algorithm described in Chan et al. \cite{hubert2018dynamic}: The algorithm maintains a clustering for each $r \in \Gamma := \{(1 + \varepsilon)^i : d_{\text{min}} \leq (1 + \varepsilon)^i \leq d_{\text{max}}, i \in \mathbb{N}\}$. Their algorithm is a $(2 + \varepsilon)$-approximation of the optimal solution and has an average running time of $O(k^2 \cdot \frac{\log(\Delta)}{\varepsilon})$ per update. 
+
+Note that the algorithm needs $d_{\text{min}}$ and $d_{\text{max}}$ as input and that it is not guaranteed that these values are available in practice. In contrast, $A_{\text{Cov}}$ does not need these parameters. For our empirical analysis, we provided these special parameters to the algorithm of Chan et al. \cite{hubert2018dynamic}. For arbitrary instances, one would initialize $d_{\text{min}}, d_{\text{max}}$ with the minimum/maximum value for the type `double` respectively to guarantee the correctness of their algorithm. From now on, we call their algorithm $A_{\text{CGS}}$.

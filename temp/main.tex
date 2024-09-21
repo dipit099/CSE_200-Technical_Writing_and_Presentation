@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage[normalem]{ulem} % For strikethrough text
+\usepackage{xcolor}         % For text colors
+
+
+\title{An Introduction to Stirling’s Number of the \\Second Kind}
+\author{ChatGPT \& S. H.}
+\date{September 21, 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In combinatorics, \textit{Stirling’s number of the second kind} $S(n, k)$ is the number of ways to \underline{partition a set of $n$ elements into $k$ non-empty subsets} \cite{wiki}. These numbers arise in various areas of mathematics and have applications in \textbf{set theory, number theory, and even computer science}\footnote{https://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind}.
+
+Stirling’s numbers of the second kind can be defined recursively and have many interesting properties, which we will explore in this document.
+
+\section{Properties of Stirling Numbers}
+
+
+
+\subsection{Definition}
+The \texttt{Stirling number of the second kind}, denoted by $S(n, k)$, is defined as the number of ways to divide a set of $n$ elements into $k$ non-empty subsets. It can be written recursively as $S(n, k) = k \cdot S(n-1, k) + S(n-1, k-1)$, for $n > 0$, with the boundary conditions $S(0,0) = 1$, $S(n, 0) = 0$ for $n > 0$, and $S(n, k) = 0$ for $k > n$.
+
+\subsection{Combinatorial Interpretation}
+Stirling numbers of the second kind have a natural combinatorial interpretation. They count the ways to partition a set of $n$ elements into $k$ non-empty subsets. For example, consider the set $\{1, 2, 3\}$. The number of ways to partition this set into two subsets is given by $S(3, 2) = 3$. These partitions are:
+
+\begin{itemize}
+    \item $\{1\}, \{2, 3\}$ 
+    \item ${\{2\}, \{1, 3\}$
+    \item $\{3\}, \{1, 2\}$
+\end{itemize}
+
+\subsection{Closed Form}
+Stirling numbers of the second kind can be described by the following equation:
+
+\textbf{INSERT THE EQUATION SHOWN IN THE PROJECTOR}
+
+\subsection{First Few Examples}
+Table 1 shows the values of the Stirling numbers of the second kind, $S(n, k)$, for small values of $n$ and $k$:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $n \backslash k$ & 1 & 2 & 3 & 4 & 5 \\ \hline
+        1 & 1 &  &  &  &  \\ 
+        %\hline
+        2 & 1 & 1 &  &  &  \\ 
+        %\hline
+        3 & 1 & 3 & 1 &  &  \\ 
+        %\hline
+        4 & 1 & 7 & 6 & 1 &  \\ 
+        %\hline
+        5 & 1 & 15 & 25 & 10 & 1 \\ 
+        \hline
+    \end{tabular}
+    \caption{Stirling Numbers of the Second Kind for $n \leq 5$.}
+    \label{tab:stirling_numbers}
+\end{table}
+
+
+\section{Conclusion}
+
+\textcolor{red}{\sout{"Don’t forget to practice more problems involving Stirling numbers to fully understand their applications!"}}
+
+
+\begin{thebibliography}{9}
+\bibitem{wiki} 
+R. L. Graham, D. E. Knuth, and O. Patashnik, 
+\textit{Concrete Mathematics: A Foundation for Computer Science}. USA: Addison-Wesley Longman Publishing Co., Inc., 2nd ed., 1994.
+\end{thebibliography}
+
+\end{document}

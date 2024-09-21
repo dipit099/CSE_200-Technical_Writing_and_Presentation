@@ -1,0 +1,20 @@
+
+    \subsection{Instances and Update Sequences}
+To compare the performance of the two algorithms, we use the instances of Chan et al. \cite{hubert2018dynamic} with Euclidean distance and add an additional random instance.
+
+\begin{itemize}
+    \item \textit{Twitter.} The Twitter data set \cite{chan2018github} is introduced in Chan et al. \cite{hubert2018dynamic} and consists of 21 million geo-tagged tweets. Our experiments consider only the first 200k tweets without duplicates.
+
+    \item \textit{Flickr.} The Yahoo Flickr Creative Commons 100 Million (YFCC100m) dataset \cite{thomee2015new} contains the metadata of 100 million pictures posted on Flickr. Unfortunately, we were not able to obtain the full dataset but used a search engine to build a subset of the dataset \cite{kalkowski2015yfcc}. This subset entails 800k points with longitude and latitude.
+
+    \item \textit{Random.} This dataset consists of 2 million points created as follows: First, we sampled 100 points $(x, y)$ uniformly at random for $-1 \leq x, y \leq 1$. Then, for each such point $(x, y)$, we sampled another 20000 points using a normal distribution with $(x, y)$ as mean and a variance of 0.001 respectively.
+\end{itemize}
+
+    We use the following update sequences on the data sets inserting at most 200k points:
+    
+    \begin{itemize}
+        \item \textit{Sliding Window.} In the sliding window query, a point is inserted at some point in time $t$ and will be removed at time $t + W$ where $W$ is the window size. We chose a sliding window of size 60k following the implementation of Chan et al. \cite{hubert2018dynamic}. During the update sequence, we perform a query every 2000 insertions. Therefore, we perform 100 queries in total.
+    
+        \item \textit{Random Insertions/Deletions.} We further distinguish between three concrete types of update sequences with 30\% deletions, 10\% deletions, and 5\% deletions. Points are inserted uniformly at random and deleted uniformly at random from the set of points already inserted. The chance to perform a query is 0.05\%. The chance to insert a point at any given timestep is given by $1-$ the respective
+        deletion percentage above $-00005$.
+    \end{itemize}
